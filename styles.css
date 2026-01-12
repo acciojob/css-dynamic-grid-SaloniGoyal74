@@ -1,25 +1,27 @@
-/* Center everything inside the container */
+/* Grid container */
 .grid-container {
-  width: 100vw;
-  height: 100vh;
-
-  display: flex;
+  display: grid;
+  /* repeat(auto-fit, minmax(...)) allows the grid to wrap items automatically */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 20px;
+  padding: 20px;
   justify-content: center;
-  align-items: center;
-  gap: 10px;
-
-  flex-wrap: wrap;
 }
 
-/* Grid items styling */
+/* Grid items */
 .grid-item {
+  /* Flex properties to center the number inside the card */
   display: flex;
   justify-content: center;
   align-items: center;
 
   background-color: lightgray;
   height: 150px;
-  width: 200px;
+  /* Remove fixed width to allow the grid to control the sizing */
+  width: 100%; 
   border-radius: 5px;
   font-size: 40px;
+  
+  /* Added a transition for a smoother feel when resizing */
+  transition: transform 0.2s ease;
 }
