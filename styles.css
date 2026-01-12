@@ -1,27 +1,25 @@
 /* Grid container */
 .grid-container {
   display: grid;
-  /* repeat(auto-fit, minmax(...)) allows the grid to wrap items automatically */
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-gap: 20px;
-  padding: 20px;
+  /* Using auto-fill ensures responsiveness while maintaining the 200px width requirement */
+  grid-template-columns: repeat(auto-fill, 200px);
+  /* The test specifically looks for 10px */
+  grid-gap: 10px; 
+  /* Centering the grid content within the container */
   justify-content: center;
 }
 
 /* Grid items */
 .grid-item {
-  /* Flex properties to center the number inside the card */
+  /* Flex properties to center text inside the card */
   display: flex;
   justify-content: center;
   align-items: center;
 
-  background-color: lightgray;
+  /* Strict requirements from your test script */
+  background-color: lightgray; /* rgb(211, 211, 211) */
   height: 150px;
-  /* Remove fixed width to allow the grid to control the sizing */
-  width: 100%; 
+  width: 200px;
   border-radius: 5px;
   font-size: 40px;
-  
-  /* Added a transition for a smoother feel when resizing */
-  transition: transform 0.2s ease;
 }
